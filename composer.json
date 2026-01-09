@@ -1,8 +1,30 @@
 {
   "require-dev": {
-    "wp-cli/i18n-command": "^2"
+    "wp-cli/i18n-command": "^2",
+    "wp-coding-standards/wpcs": "^3.3",
+    "phpcompatibility/phpcompatibility-wp": "^2.1"
   },
   "scripts": {
-    "makepot": "wp i18n make-pot ."
+    "makepot": "wp i18n make-pot .",
+    "phpcheck": "@php ./vendor/bin/phpcs -ps .",
+    "phpfix": "@php ./vendor/bin/phpcbf --report=summary,source"
+  },
+  "autoload": {
+    "psr-4": {
+        "WritePoetry\\Blocks\\": "inc/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "WritePoetry\\Blocks\\Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "php-di/php-di": "^7.1"
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
   }
 }
