@@ -13,3 +13,10 @@
  */
 
 // Your code starts here.
+
+// Load the autoloader.
+if ( is_readable( __DIR__ . '/vendor/autoload.php' ) ) {
+	require_once __DIR__ . '/vendor/autoload.php';
+}
+
+$container = require_once __DIR__ . '/bootstrap/container.php';
